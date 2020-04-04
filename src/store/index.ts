@@ -76,7 +76,7 @@ export default new Vuex.Store({
   },
   mutations: {
     increment(state) {
-      if (state.index <= state.exercices.length) {
+      if (state.index < state.exercices.length - 1) {
         state.index++;
       }
     },
