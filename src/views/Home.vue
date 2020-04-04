@@ -13,8 +13,12 @@
       <solution-selector :value="possibleSolutions" :answer="answer" />
     </div>
     <div class="buttons">
-      <button type="button" class="btn btn-secondary" @click="decrementIndex">Enrere</button>
-      <button type="button" class="btn btn-info" @click="incrementIndex">Següent</button>
+      <button type="button" class="btn btn-secondary" @click="decrementIndex">
+        <font-awesome-icon icon="arrow-left"/>
+      </button>
+      <button type="button" class="btn btn-info" @click="incrementIndex">
+        <font-awesome-icon icon="arrow-right"/>
+      </button>
     </div>
   </div>
 </template>
@@ -63,7 +67,8 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  margin: 2%;
+  width: 100%;
+  padding: 2%;
 }
 .card-body {
   display: flex;
@@ -72,7 +77,7 @@ export default {
 }
 .buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 2.5em 0;
 }
 .solution-container {
