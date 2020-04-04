@@ -22,6 +22,7 @@
 <script lang="ts">
 import Regleta from '@/components/Regleta.vue'
 import SolutionSelector from '@/components/SolutionSelector.vue'
+import store from '@/store/index'
 
 export default {
   name: 'Home',
@@ -31,26 +32,26 @@ export default {
   },
   computed: {
       index(): number {
-        return this.$store.state.index;
+        return store.state.index;
       },
       exercices(): number[] {
-        return this.$store.getters.getExercices
+        return store.getters.getExercices
       },
       answer(): number {
-        return this.$store.getters.getAnswer
+        return store.getters.getAnswer
       },
       possibleSolutions(): number[] {
-        return this.$store.getters.getPossibleSolutions
+        return store.getters.getPossibleSolutions
       },
   },
   methods: {
       incrementIndex() {
-        this.$store.commit('setShowState', false)
-        this.$store.commit('increment')
+        store.commit('setShowState', false)
+        store.commit('increment')
       },
       decrementIndex() {
-        this.$store.commit('setShowState', false) 
-        this.$store.commit('decrement')
+        store.commit('setShowState', false) 
+        store.commit('decrement')
       },
       getRegletaColor(value: number): string {
         if (value === 10) return '#dd2c00';
